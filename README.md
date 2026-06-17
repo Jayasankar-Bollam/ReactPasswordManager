@@ -109,7 +109,7 @@ npm install
 Create a `.env` file inside the backend folder and add:
 
 ```env
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=mongodb://localhost:27017/
 PORT=3000
 ```
 
