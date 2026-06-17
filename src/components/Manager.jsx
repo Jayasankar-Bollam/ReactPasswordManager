@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { useRef, useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Manager = () => {
-    const ref = useRef()
+    const eyeRef = useRef()
     const passwordRef = useRef()
     const [form, setform] = useState({ site: "", username: "", password: "" })
     const [passwordArray, setPasswordArray] = useState([])
@@ -41,12 +40,12 @@ const Manager = () => {
     //     passwordRef.current.type = "text"
     //     console.log(ref.current.src)
     //     if (ref.current.src.includes("icons/eyecross.png")) {
-    //         ref.current.src = "icons/eye.png"
+    //         ref.current.src = "icons/eye.jpg"
     //         passwordRef.current.type = "password"
     //     }
     //     else {
     //         passwordRef.current.type = "text"
-    //         ref.current.src = "icons/eyecross.png"
+    //         ref.current.src = "icons/eyecross."
     //     }
 
     // }
@@ -54,11 +53,11 @@ const Manager = () => {
 
     const showPassword = () => {
     // ✅ Remove the unconditional line at top
-    if (eyeRef.current.src.includes("eyecross.png")) {
-        eyeRef.current.src = "/icons/eye.png"
+    if (eyeRef.current.src.includes("eyecross.jpg")) {
+        eyeRef.current.src = "/icons/eye.jpg"
         passwordRef.current.type = "password"
     } else {
-        eyeRef.current.src = "/icons/eyecross.png"
+        eyeRef.current.src = "/icons/eyecross.jpg"
         passwordRef.current.type = "text"
     }
 }
@@ -197,7 +196,7 @@ const Manager = () => {
                         <div className="relative">
                             <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder="Enter Password" className='rounded-full border border-green-500 w-full p-4 py-1' type="password" name="password" id="" />
                             <span className="absolute right-[3px] top-[6px] cursor-pointer" onClick={showPassword}>
-                                <img ref={ref} className="p-1" width={26} src="/icons/eye.jpg" alt="eye" />
+                                <img ref={eyeRef} className="p-1" width={26} src="/icons/eye.jpg" alt="eye" />
                             </span>
                         </div>
                     </div>
@@ -298,3 +297,4 @@ const Manager = () => {
 }
 
 export default Manager
+
